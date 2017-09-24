@@ -1,0 +1,118 @@
+<?php
+	$name=$_POST['name'];
+	$roll=$_POST['roll'];
+	$id=$_POST['id'];
+	error_reporting(E_ALL ^ E_DEPRECATED);
+	$con=mysql_connect('localhost','root','');
+	mysql_select_db('db1',$con);
+	$que=mysql_query("insert into student values('$name','$roll',$id)");
+	if($que>0)
+	{
+		echo"connectkbk successfuly";
+	}
+	else
+	{
+		echo"try again";	
+	}
+	
+	
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+	$name=$_POST['name'];
+	$roll=$_POST['roll'];
+	$id=$_POST['id'];
+	error_reporting(E_ALL ^ E_DEPRECATED);
+	$con=mysql_connect('localhost','root','');
+	mysql_select_db('db1',$con);
+	$result=mysql_query("select * from student");
+	if($result>0)
+	{
+		echo "successfuly";
+	}
+	else
+	{
+		echo"try again";	
+	}
+	$num=mysql_num_rows($result);
+	echo $num;
+	for($i=1; $i<=$num; $i++)
+	{
+		$row=mysql_fetch_array($result);
+		echo $row['name']."   ".$row['roll']."   ".$row['id'];
+		echo "<br>";
+	}
+	mysql_close($con);
+	
+?>
+
+
+
+
+
+
+
+
+
+<?php
+	$name=$_POST['name'];
+	$roll=$_POST['roll'];
+	$id=$_POST['id'];
+	error_reporting(E_ALL ^ E_DEPRECATED);
+	$con=mysql_connect('localhost','root','');
+	mysql_select_db('db1',$con);
+	$result=mysql_query("select * from student");
+	$num=mysql_num_rows($result);
+	echo $num;
+	while($row=mysql_fetch_array($result))
+	
+	{
+		echo $row['name']."   ".$row['roll']."   ".$row['id'];
+		echo "<br>";
+	}
+	mysql_close($con);
+	
+?>
+
+
+
+
+
+
+
+
+
+<?php
+	$name=$_POST['name'];
+	$roll=$_POST['roll'];
+	$id=$_POST['id'];
+	error_reporting(E_ALL ^ E_DEPRECATED);
+	$con=mysql_connect('localhost','root','');
+	mysql_select_db('db1',$con);
+	$result=mysql_query("select * from student");
+	$num=mysql_num_rows($result);
+	echo $num;
+	echo"<table border='1'>";
+	while($row=mysql_fetch_array($result))
+	
+	{
+		echo "<tr><td>".$row['name'].'</td>'."   ".'<td>'.$row['roll'].'</td>'."   ".'<td>'.$row['id'].'</td></tr>';
+		echo "<br>";
+	}
+	mysql_close($con);
+	echo"</table>";
+	
+?>
