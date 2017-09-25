@@ -21,6 +21,7 @@
 										"."</td><td>"."
 														<form action='delete.php' method='post'>
 															<input type='hidden' name='emp_id' value='".$row['emp_id']."'>
+															<input type='hidden' name='email' value='".$row['email']."'>
 															<input type='submit' name='submit' value='delete'>
 														</form>
 										

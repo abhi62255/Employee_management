@@ -5,7 +5,6 @@
 		$con=mysql_connect('localhost','root','');
 		mysql_select_db('employee',$con);
 		$value=$_POST['value'];
-		echo $value;
 		if($value==1)
 		{
 			$id=$_POST['id'];
@@ -27,7 +26,16 @@
 		echo"<table border='1'>";
 			while($row=mysql_fetch_array($result))
 			{
-				echo "<tr><td>".$row['emp_name']."</td><td>".$row['designation']."</td><td>".$row['contact']."</td><td>".$row['email']."</td><td>".$row['emp_id']."</td></tr>";
+				echo "<tr><td>".$row['emp_name']."</td><td>".$row['designation']."</td><td>".$row['contact']."</td><td>".$row['email']."</td><td>".$row['emp_id']."</td><td>
+				<form action='todolist.php' method='post'> 
+					<input type='text' name='todo'>
+					<input type='hidden' name='id' value=".$row['emp_id'].">
+					
+				</td>
+				<td>
+					<input type='submit' name='submit' value='Grant'>
+					</form>
+				</td></tr>";
 			}
 			echo"</table>";
 	}
