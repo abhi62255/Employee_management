@@ -1,10 +1,8 @@
 <?php
 	session_start();
+	$_SESSION['inc']=0;
 	if(isset($_SESSION['username']))
 	{
-
-
-
 ?>
 
 

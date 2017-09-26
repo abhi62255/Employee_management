@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	if(isset($_POST['submit']))
 	{
 		error_reporting(E_ALL ^ E_DEPRECATED);
@@ -23,10 +24,20 @@
 			$salary=$_POST['salary'];
 			$result=mysql_query("select * from emp_details where salary<$salary");
 		}
+		if($_SESSION['inc']==1)
+		{
+			echo "Work has been granted ";
+					$_SESSION['inc']=0;
+		}
 		echo"<table border='1'>";
 			while($row=mysql_fetch_array($result))
 			{
-				echo "<tr><td>".$row['emp_name']."</td><td>".$row['designation']."</td><td>".$row['contact']."</td><td>".$row['email']."</td><td>".$row['emp_id']."</td><td>
+			echo "<tr><td>".$row['emp_name']."</td>
+				<td>".$row['designation']."</td>
+				<td>".$row['contact']."</td>
+				<td>".$row['email']."</td>
+				<td>".$row['emp_id']."</td>
+				<td>
 				<form action='todolist.php' method='post'> 
 					<input type='text' name='todo'>
 					<input type='hidden' name='id' value=".$row['emp_id'].">

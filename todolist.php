@@ -8,10 +8,8 @@
 		$todo=$_POST['todo'];
 		$date=date("d-m-y");
 		$result=mysql_query("insert into todolist(emp_id,list,date) values($id,'$todo','$date')");
-		if($result)
-		echo"inserted";
-		else
-		echo"not inserted";
+		$_SESSION['inc']=1;
+		header('Location: view_emp1.php');
 	}
 
 ?>
