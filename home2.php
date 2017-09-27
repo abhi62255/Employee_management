@@ -11,6 +11,7 @@
 	echo"<a href='work.php'>work</a><br />";
 	echo"<a href='leave.php'>Request For Leave</a><br />";
 	echo"<a href='leave5.php'>Response For Leave</a><br />";
+	echo"<a href='message2.php'>Some Important Messages</a><br />";
 	$r=mysql_query("select * from emp_details where email='$email'");
 	echo"good";
 	$row=mysql_fetch_array($r);

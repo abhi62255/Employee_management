@@ -17,6 +17,7 @@
 		<a href="request.php">New requests  of employee</a><br />
 		<a href="completed_requests.php">work requests</a><br />
 		<a href="leave3.php">Leave requests</a><br />
+		<a href="message_.php">Send Messages</a><br />
 		<a href="logout.php">logout</a><br />
 </body>
 </html>
