@@ -13,9 +13,10 @@
 	echo"<a href='leave.php'>Request For Leave</a><br />";
 	echo"<a href='leave5.php'>Response For Leave</a><br />";
 	echo"<a href='message2.php'>Some Important Messages</a><br />";
+	echo"<a href='clander.php'>View Calander</a><br />";
 	echo"<a href='password.php'>Change Password</a><br />";
 	$r=mysql_query("select * from emp_details where email='$email'");
 	echo"good";
 	$row=mysql_fetch_array($r);
-	echo $row['emp_id'];
+	$_SESSION['emp_id']=$row['emp_id'];
 ?>
