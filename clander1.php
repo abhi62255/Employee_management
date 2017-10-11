@@ -43,6 +43,7 @@
 				//echo $date;
 				$today = date("Y-m-d");
 				$id=$_SESSION['emp_id'];
+				$join_date=$_SESSION['join_date'];
 				$result=mysql_query("select * from holiday_details where emp_id=$id and date='$date'");
 				if($i1[2]>31 || $i1[2]>28 && $i1[1]=='02' || $i1[2]>31 && ($i1[1]=='04' || $i1[1]=='06' || $i1[1]=='09' || $i1[1]=='11'))
 					echo "<td>";
@@ -52,7 +53,7 @@
 					echo "<td bgcolor=#FF7777>";
 				elseif($date == $today)
 					echo "<td bgcolor=#00FFFF>";
-				elseif($date < $today)
+				elseif($date < $today && $date >= $join_date)
 					echo "<td bgcolor=#B0FFFF>";
 				else
 					echo "<td>";

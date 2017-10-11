@@ -19,4 +19,6 @@
 	echo"good";
 	$row=mysql_fetch_array($r);
 	$_SESSION['emp_id']=$row['emp_id'];
+	$_SESSION['join_date']=$row['joining_date'];
+	echo $_SESSION['join_date'];
 ?>

@@ -1,9 +1,29 @@
-<?php
-	$begin = new DateTime('2013-02-01');
-	$end = new DateTime('2013-02-13');
-	$daterange = new DatePeriod($begin, new DateInterval('P1D'), $end);
-	
-	foreach($daterange as $date){
-	    echo $date->format("Y-m-d") . "<br>";
-	}
-?>
+<html>
+
+<body>
+<div style=" background:#FF7777">
+hellooooo
+</div>
+<table border="1" bgcolor="#F4F4F4" >
+<tr><td style="width:100px;">hello</td></tr>
+</table>
+hellooooo
+</div>
+
+<div>
+hellooooo
+</div>
+
+<div>
+hellooooo
+</div>
+
+<div>
+hellooooo
+</div>
+
+
+
+
+</body>
+</html>

@@ -11,9 +11,10 @@
 		$contact=$_POST['contact'];
 		$password=$_POST['password'];
 		$salary=$_POST['salary'];
+		$date=$_POST['date'];
 		
-		$r=mysql_query("INSERT INTO emp_details(emp_name,age,designation,gender,email,contact,password,salary)
-		values('$name',$age,'$designation','$gender','$email','$contact','$password',$salary)");
+		$r=mysql_query("INSERT INTO emp_details(emp_name,age,designation,gender,email,contact,password,salary,joining_date)
+		values('$name',$age,'$designation','$gender','$email','$contact','$password',$salary,'$date')");
 		if($r)
 		{
 			$r1=mysql_query("delete from emp_request where emp_id =$id");

@@ -24,6 +24,7 @@
 											<input type='hidden' name='gender' value='".$row['gender']."'>
 											<input type='hidden' name='age' value='".$row['age']."'>
 											<input type='hidden' name='password' value='".$row['password']."'>
+											<input type='hidden' name='date' value='".$row['joining_date']."'>
 											<input type='submit' name='submit' value='Accept'>
 										</form>
 										"."</td><td>"."

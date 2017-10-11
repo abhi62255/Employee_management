@@ -11,7 +11,8 @@
 		$email=$_POST['emp_email'];
 		$contact=$_POST['emp_contact'];
 		$password=$_POST['emp_password'];
-		$result=mysql_query("insert into emp_request(emp_name,age,designation,gender,email,contact,password) values('$name',$age,'$designation','$gender','$email','$contact','$password')");
+		$date="20".date('y-m-d');
+		$result=mysql_query("insert into emp_request(emp_name,age,designation,gender,email,contact,password,joining_date) values('$name',$age,'$designation','$gender','$email','$contact','$password','$date')");
 		if($result)
 		{
 			echo"success";
