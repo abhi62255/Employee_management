@@ -11,12 +11,12 @@
 		//echo $i1[0]." ".($i1[1]-1);
 		
 
-	echo"<table border='1'>";
+	echo"<table border='0' bgcolor='#F4F4F4' alin='auto' style='text-align:right'>";
 		$monthNum  = $i1[1];					// Converting month number in Month name
 		$dateObj   = DateTime::createFromFormat('!m', $monthNum);
 		$monthName = $dateObj->format('F'); // March
-		echo"<tr><th colspan='7'>".$i1[0].' '.$monthName."</th></tr>";
-		echo"<tr><td>Monday</td><td>Tuesday</td><td>Wednesday</td><td>Thusday</td><td>Friday</td><td>Saturday</td><td>Sunday</td></tr>";
+		echo"<tr><th colspan='7' style='text-align:center'>".$i1[0].' '.$monthName."</th></tr>";
+		echo"<tr><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thusday</th><th>Friday</th><th>Saturday</th><th>Sunday</th></tr>";
 
 		echo "<tr>";
 		if($_SESSION['day_number']==0){
@@ -46,14 +46,14 @@
 				$result=mysql_query("select * from holiday_details where emp_id=$id and date='$date'");
 				if($i1[2]>31 || $i1[2]>28 && $i1[1]=='02' || $i1[2]>31 && ($i1[1]=='04' || $i1[1]=='06' || $i1[1]=='09' || $i1[1]=='11'))
 					echo "<td>";
-				elseif(mysql_num_rows($result)>0)
-					echo "<td bgcolor=#fa7878;>";
 				elseif($j==6)
-					echo "<td bgcolor=#7CFC00;>";
-				elseif($date < $today)
-					echo "<td bgcolor=#abebf5;>";
+					echo "<td bgcolor=#A4FE9E>";
+				elseif(mysql_num_rows($result)>0)
+					echo "<td bgcolor=#FF7777>";
 				elseif($date == $today)
-					echo "<td bgcolor=#800000;>";
+					echo "<td bgcolor=#00FFFF>";
+				elseif($date < $today)
+					echo "<td bgcolor=#B0FFFF>";
 				else
 					echo "<td>";
 				if($i1[1]=='01'){
@@ -142,6 +142,7 @@
 			echo "</tr><tr>";
 				
 		}
+		echo "<br />";
 
 
 	}
