@@ -7,6 +7,7 @@
 	$ins=$_POST['date'];
 	mysql_query("insert into holiday_details values($id,'$ins')");
 	$_SESSION['auth']=1;
+	$_SESSION['value']=1;
 	header('Location: unauthorized_leave.php')
 	
 ?>

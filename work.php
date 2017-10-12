@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	include('home2.php');
 	if($_SESSION['value']==1)
 	echo "Complete Request Send";
 	

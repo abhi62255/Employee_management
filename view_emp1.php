@@ -1,5 +1,6 @@
 <?php
-	session_start();
+	include 'home.php';
+	//session_start();
 	if(isset($_POST['submit']))
 	{
 		error_reporting(E_ALL ^ E_DEPRECATED);

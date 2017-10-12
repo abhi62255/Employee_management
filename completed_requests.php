@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	include('home.php');
 	if($_SESSION['value']==1)
 		echo "Accepted";
 	if($_SESSION['value']==2)

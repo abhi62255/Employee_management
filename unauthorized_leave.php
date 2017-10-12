@@ -1,3 +1,9 @@
+<?php
+	include('home.php');
+	if($_SESSION['value']==1)
+		echo "Authorized";
+	$_SESSION['value']=0;
+?>
 <html>
 <head>
 <title>Untitled Document</title>
@@ -25,7 +31,6 @@
 </body>
 </html>
 <?php
-	session_start();
 	if($_SESSION['auth']==1)
 	echo"Leave authorized";
 ?>

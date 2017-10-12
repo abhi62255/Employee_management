@@ -1,3 +1,15 @@
+<?php
+	include('home.php');
+	//session_start();
+	if($_SESSION['value']==1)
+		{
+			echo "Work has been granted ";
+		}
+	if($_SESSION['value']==2)
+		echo "Their is some problem in server try again later";
+	$_SESSION['value']=0;
+
+?>
 <html>
 <head>
 <title>Untitled Document</title>
@@ -29,15 +41,3 @@
 	</form>
 </body>
 </html>
-<?php
-	session_start();
-	if($_SESSION['value']==1)
-		{
-			echo "Work has been granted ";
-		}
-	if($_SESSION['value']==2)
-		echo "Their is some problem in server try again later";
-	$_SESSION['value']=0;
-	
-
-?>

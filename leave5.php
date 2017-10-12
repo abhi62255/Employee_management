@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	include('home2.php');
 	error_reporting(E_ALL ^ E_DEPRECATED);
 	$con=mysql_connect('localhost','root','');
 	mysql_select_db('employee',$con);

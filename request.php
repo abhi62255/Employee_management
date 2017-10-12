@@ -1,8 +1,9 @@
 <?php
+		include('home.php');
 		error_reporting(E_ALL ^ E_DEPRECATED);
 		$con=mysql_connect('localhost','root','');
 		mysql_select_db('employee',$con);
-		session_start();
+		//session_start();
 		if($_SESSION['value']==1)
 			echo "Employee Added <br />";
 		$_SESSION['value']=0;

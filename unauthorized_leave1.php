@@ -1,14 +1,13 @@
 <?php
-	session_start();
+	include('home.php');
 	if(isset($_POST['submit']))
-	{
+	{	
 		error_reporting(E_ALL ^ E_DEPRECATED);
 		$con=mysql_connect('localhost','root','');
 		mysql_select_db('employee',$con);
 		$value=$_POST['value'];
 		$date=date("y-m-d");
 		$date1='20'.$date;
-		echo $date1;
 		
 		if($value==1)
 		{

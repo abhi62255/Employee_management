@@ -1,3 +1,6 @@
+<?php
+	include('home.php');
+?>
 <html>
 	
 	<body>
@@ -19,7 +22,7 @@
 	</body>
 	</html>
 <?php
-		session_start();
+		//session_start();
 		if(isset($_POST['modify']))
 		{
 		error_reporting(E_ALL ^ E_DEPRECATED);

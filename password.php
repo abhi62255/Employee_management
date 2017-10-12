@@ -1,3 +1,6 @@
+<?php
+	include('home2.php');
+?>
 <html>
 <head>
 <title>Untitled Document</title>
@@ -13,7 +16,6 @@
 </body>
 </html>
 <?php
-session_start();
 if($_SESSION['value']==1)
 {
 	echo 'Password and confirm Password are not same';

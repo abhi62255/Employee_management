@@ -1,5 +1,6 @@
 <?php
-		session_start();
+		//session_start();
+		include('home.php');
 		if($_SESSION['value']==1)
 			echo "Employee Removed";
 		if($_SESSION['value']==2)
