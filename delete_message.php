@@ -6,5 +6,6 @@
 	$id=$_POST['id'];
 	echo $id;
 	mysql_query("delete from message where id=$id");
+	$_SESSION['value']=2;
 	header('Location: message_.php');
 ?>

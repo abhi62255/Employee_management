@@ -9,7 +9,8 @@ if(isset($_POST['submit']))
 	$message=$_POST['message'];
 	$date=date("d-m-y");
 	mysql_query("insert into message (message,date) values('$message','$date')");
-	echo"Message Send";
+	$_SESSION['value']=1;
+	header('Location: message_.php');
 }
 else
 header('Location: message_.php');

@@ -11,7 +11,7 @@
 		if(mysql_num_rows($result)==1)
 		{	
 			$_SESSION['username']=$username;
-			if($_SESSION['username']=='manager' || $_SESSION['username']=='tech_lead')
+			if($_SESSION['username']=='Manager' || $_SESSION['username']=='manager' || $_SESSION['username']=='tech_lead' || $_SESSION['username']=='Tech_lead')
 			header('Location: home.php');
 			else
 			header('Location: home2.php');
@@ -19,6 +19,7 @@
 		}
 		else
 		{
-			echo"your credentials are wrong";
+			$_SESSION['value']=3;
+			header('Location: login.php');
 		}
 	}

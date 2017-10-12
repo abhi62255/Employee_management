@@ -15,7 +15,7 @@
 
 <body>	<p><?php echo "welcome ".$_SESSION['username'];?></p>
 		<a href="modify_emp.php">Modify empploy details</a><br />
-		<a href="view_emp.html">View employee</a><br />
+		<a href="view_emp.php">View employee</a><br />
 		<a href="request.php">New requests  of employee</a><br />
 		<a href="completed_requests.php">work requests</a><br />
 		<a href="leave3.php">Leave requests</a><br />

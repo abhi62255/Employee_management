@@ -1,4 +1,11 @@
 <?php
+		session_start();
+		if($_SESSION['value']==1)
+			echo "Employee Removed";
+		if($_SESSION['value']==2)
+			echo "Try again";
+		$_SESSION['value']=0;
+			
 		error_reporting(E_ALL ^ E_DEPRECATED);
 		$con=mysql_connect('localhost','root','');
 		mysql_select_db('employee',$con);
@@ -13,7 +20,7 @@
 			while($row=mysql_fetch_array($result))
 			{	
 				
-				echo "<tr><td>".$row['emp_name']."</td><td>".$row['designation']."</td><td>".$row['contact']."</td><td>".$row['email']."</td><td>".$row['gender']."</td><td>"."
+				echo "<tr><td>".$row['emp_id']."</td><td>".$row['emp_name']."</td><td>".$row['designation']."</td><td>".$row['contact']."</td><td>".$row['email']."</td><td>".$row['gender']."</td><td>"."
 										<form action='modify.php' method='post'>
 											<input type='hidden' name='emp_id' value='".$row['emp_id']."'>
 											<input type='submit' name='submit' value='Modify'>

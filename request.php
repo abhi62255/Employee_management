@@ -2,6 +2,10 @@
 		error_reporting(E_ALL ^ E_DEPRECATED);
 		$con=mysql_connect('localhost','root','');
 		mysql_select_db('employee',$con);
+		session_start();
+		if($_SESSION['value']==1)
+			echo "Employee Added <br />";
+		$_SESSION['value']=0;
 		$result=mysql_query("select * from emp_request");
 		if(mysql_num_rows($result)==0)
 		{
@@ -15,7 +19,7 @@
 				
 				echo "<tr><td>".$row['emp_name']."</td><td>".$row['designation']."</td><td>".$row['contact']."</td><td>".$row['email']."</td><td>".$row['gender']."</td><td>"."
 										<form action='accept.php' method='post'>
-											<input type='number' name='salary' placeholder='salary' >
+											<input type='number' name='salary' placeholder='salary' required >
 											<input type='hidden' name='emp_name' value='".$row['emp_name']."'>
 											<input type='hidden' name='emp_id' value='".$row['emp_id']."'>
 											<input type='hidden' name='designation' value='".$row['designation']."'>

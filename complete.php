@@ -12,6 +12,7 @@
 		$id=$row['id'];
 		mysql_query("insert into completed_todolist values($emp_id,'$list','$date',$id)");
 		$r=mysql_query("delete from todolist where id=$id");
+		$_SESSION['value']=1;
 		header('Location: work.php');
 
 

@@ -15,6 +15,12 @@
 
 <?php
 	session_start();
+	if($_SESSION['value']==1)
+		echo "Message send <br />";
+	if($_SESSION['value']==2)
+		echo "Message Deleted <br />";
+	$_SESSION['value']=0;
+	
 	error_reporting(E_ALL ^ E_DEPRECATED);
 	$con=mysql_connect('localhost','root','');
 	mysql_select_db('employee',$con);

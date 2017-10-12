@@ -33,8 +33,12 @@
 </html>
 <?php
 	}
+	elseif($_SESSION['value']==1)
+		{
+			echo "Request Send <br />";
+				$_SESSION['value']=0;
+		}
 	else
 	echo 'your request is already pending';
-
 
 ?>

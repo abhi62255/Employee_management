@@ -1,4 +1,5 @@
 <?php
+		session_start();
 		error_reporting(E_ALL ^ E_DEPRECATED);
 		$con=mysql_connect('localhost','root','');
 		mysql_select_db('employee',$con);
@@ -8,13 +9,19 @@
 		
 		
 		
-		$r1=mysql_query("delete from emp_details where emp_id =$id");
-		$r2=mysql_query("delete from login_details where username='$email'");
+		mysql_query("delete from emp_details where emp_id =$id");
+		mysql_query("delete from completed_todolist where emp_id =$id");
+		mysql_query("delete from holiday_details where emp_id =$id");
+		mysql_query("delete from leave_request where emp_id =$id");
+		mysql_query("delete from todolist where emp_id =$id");
+		$r1=mysql_query("delete from login_details where username='$email'");
 			if($r1)
 			{
-			echo"dele";
-			header('Location: modify_emp.php');
+				$_SESSION['value']=1;
 			}
 			else
-			echo"not del";	
+				$_SESSION['value']=2;
+				
+		header('Location: modify_emp.php');
+					
 ?>

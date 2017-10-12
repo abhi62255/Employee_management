@@ -1,5 +1,10 @@
 <?php
 	session_start();
+	if($_SESSION['value']==1)
+		echo "Rejected";
+	if($_SESSION['value']==2)
+		echo "Accepted";
+	$_SESSION['value']=0;
 	error_reporting(E_ALL ^ E_DEPRECATED);
 	$con=mysql_connect('localhost','root','');
 	mysql_select_db('employee',$con);
@@ -30,6 +35,8 @@
 				</tr>";
 			}
 			echo"</table>";
-		
-	
+			if($row=mysql_num_rows($result)==0)
+			{
+				echo "No request exits";
+			}
 ?>

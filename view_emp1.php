@@ -24,11 +24,6 @@
 			$salary=$_POST['salary'];
 			$result=mysql_query("select * from emp_details where salary<$salary");
 		}
-		if($_SESSION['inc']==1)
-		{
-			echo "Work has been granted ";
-					$_SESSION['inc']=0;
-		}
 		echo"<table border='1'>";
 			while($row=mysql_fetch_array($result))
 			{
@@ -51,6 +46,6 @@
 			echo"</table>";
 	}
 	else
-	header('Location: view_emp.html');
+	header('Location: view_emp.php');
 		
 ?>

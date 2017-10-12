@@ -13,13 +13,15 @@
 		}
 		if($value==1)
 		{
-			mysql_query("delete from completed_todolist where id=$id");		
+			mysql_query("delete from completed_todolist where id=$id");	
+			$_SESSION['value']=1;	
 		}
 		if($value==2)
 		{
 			$emp_id=$_POST['emp_id'];
 			mysql_query("insert into todolist values($emp_id,'$list','PREVIOUS',$id)");
 			mysql_query("delete from completed_todolist where id=$id");
+			$_SESSION['value']=2;
 		}
 		header('Location: completed_requests.php');
 

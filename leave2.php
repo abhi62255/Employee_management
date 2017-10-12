@@ -15,7 +15,10 @@
 		$name=$row['emp_name'];
 		$s=mysql_query("insert into leave_request values($id,'$name','$date','$date2','$reason','----')");
 		if($s)
-		echo 'request sent';
+		{
+			$_SESSION['value']=1;
+			header('Location: leave.php');
+		}
 	}
 
 

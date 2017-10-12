@@ -1,5 +1,6 @@
 <?php
 	error_reporting(E_ALL ^ E_DEPRECATED);
+	session_start();
 	if(isset($_POST['submit']))
 	{
 		$con=mysql_connect('localhost','root','');
@@ -12,17 +13,27 @@
 		$contact=$_POST['emp_contact'];
 		$password=$_POST['emp_password'];
 		$date="20".date('y-m-d');
-		$result=mysql_query("insert into emp_request(emp_name,age,designation,gender,email,contact,password,joining_date) values('$name',$age,'$designation','$gender','$email','$contact','$password','$date')");
-		if($result)
+		$r=mysql_query("select * from emp_details where email='$email' or contact='$contact'");
+		if($r)
+		echo "good";
+		if(mysql_num_rows($r)==0)
 		{
-			echo"success";
-		}	
+			$result=mysql_query("insert into emp_request(emp_name,age,designation,gender,email,contact,password,joining_date) values('$name',$age,'$designation','$gender','$email','$contact','$password','$date')");
+			if($result)
+			{
+				$_SESSION['value']=1;
+			}	
+			else
+			{
+				$_SESSION['value']=2;
+			}
+		}
 		else
-		echo"try again";
-		
+		{
+			$_SESSION['value']=2;
+		}
 		
 	}
-	else
-		echo"not sign up";
+	header('Location: login.php');
 	
 ?>

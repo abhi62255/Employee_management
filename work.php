@@ -1,5 +1,8 @@
 <?php
 	session_start();
+	if($_SESSION['value']==1)
+	echo "Complete Request Send";
+	
 	error_reporting(E_ALL ^ E_DEPRECATED);
 		$con=mysql_connect('localhost','root','');
 		mysql_select_db('employee',$con);

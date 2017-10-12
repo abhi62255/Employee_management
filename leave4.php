@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	$_SESSION['value']=2;
 	error_reporting(E_ALL ^ E_DEPRECATED);
 	$con=mysql_connect('localhost','root','');
 	mysql_select_db('employee',$con);
@@ -32,9 +33,9 @@
 	if($value==2)
 	{
 		$r1=mysql_query("update leave_request set status='Rejected' where emp_id=$id && status='----'");
-		if($r1)
-		echo"grant decline";
+		$_SESSION['value']=1;
 	}
+	header('Location: leave3.php');
 	
 	
 ?>

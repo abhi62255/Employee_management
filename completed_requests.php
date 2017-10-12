@@ -1,5 +1,10 @@
 <?php
 	session_start();
+	if($_SESSION['value']==1)
+		echo "Accepted";
+	if($_SESSION['value']==2)
+		echo "Rejected";
+	$_SESSION['value']=0;
 	error_reporting(E_ALL ^ E_DEPRECATED);
 		$con=mysql_connect('localhost','root','');
 		mysql_select_db('employee',$con);

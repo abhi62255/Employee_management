@@ -2,6 +2,7 @@
 		error_reporting(E_ALL ^ E_DEPRECATED);
 		$con=mysql_connect('localhost','root','');
 		mysql_select_db('employee',$con);
+		session_start();
 		$name=$_POST['emp_name'];
 		$age=$_POST['age'];
 		$id=$_POST['emp_id'];
@@ -19,6 +20,7 @@
 		{
 			$r1=mysql_query("delete from emp_request where emp_id =$id");
 			$r2=mysql_query("insert into login_details values('$email','$password')");
+			$_SESSION['value']=1;
 			header('Location: request.php');
 				
 		}
